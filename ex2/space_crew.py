@@ -29,7 +29,7 @@ class SpaceMission(BaseModel):
     mission_id: str = Field(..., min_length=5, max_length=15)
     mission_name: str = Field(..., min_length=3, max_length=100)
     destination: str = Field(..., min_length=3, max_length=50)
-    launch_date: datetime = Field(default_factory=datetime.now())
+    launch_date: datetime = Field(default_factory=datetime.now)
     duration_days: int = Field(..., ge=1, le=3650)
     crew: List[CrewMember] = Field(..., min_length=1, max_length=12)
     mission_status: str = Field(default="planned")
@@ -118,7 +118,7 @@ def main() -> None:
             mission_id="M2024_MARS",
             mission_name="Mars Colony Establishment",
             destination="Mars",
-            launch_date=datetime.now(),
+            launch_date=datetime.now,
             duration_days=900,
             crew=crew1,
             budget_millions=2500.0
@@ -147,7 +147,7 @@ def main() -> None:
             mission_id="M2024_MOON",
             mission_name="Moon Base",
             destination="Moon",
-            launch_date=datetime.now(),
+            launch_date=datetime.now,
             duration_days=30,
             crew=crew2,
             budget_millions=500.0
